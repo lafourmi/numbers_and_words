@@ -7,6 +7,7 @@ module NumbersAndWords
         module Fr
           class Fractional < Base
             def run
+              @options[:gender] = :male
               "#{super} #{fraction_significance}"
             end
 
