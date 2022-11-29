@@ -33,6 +33,10 @@ module NumbersAndWords
 
           private
 
+          def internal_options
+            { gender: gender }
+          end
+
           def one?
             words_in_capacity(@current_capacity) == [translations.ones(1)]
           end
@@ -42,11 +46,7 @@ module NumbersAndWords
           end
           
           def gender
-            @current_capacity ||= 0
-
-            return :male if @current_capacity >= 2
-
-            @options.gender.result
+            options.gender.result
           end
         end
       end
