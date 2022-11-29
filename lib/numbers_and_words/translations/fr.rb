@@ -8,6 +8,16 @@ module NumbersAndWords
 
       SPECIAL_TENS_CASE = 8
 
+      def zero(_options = {})
+        t('ones.male')[0]
+      end
+
+      def ones(number, options = {})
+        return if options[:is_one_thousand]
+
+        t([:ones, options[:gender]].join('.'))[number]
+      end
+
       def tens(number, options = {})
         return t(:eighty) if number == SPECIAL_TENS_CASE && options[:alone].nil?
 
