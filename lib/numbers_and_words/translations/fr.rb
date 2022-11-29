@@ -8,7 +8,7 @@ module NumbersAndWords
 
       SPECIAL_TENS_CASE = 8
 
-      def zero(_options = {})
+      def zero(options = {})
         t(options[:prefix], :ones, :male)[0]
       end
 
