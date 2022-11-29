@@ -1,6 +1,8 @@
 fr:
   numbers:
-    ones: [zéro, un, deux, trois, quatre, cinq, six, sept, huit, neuf]
+    ones: 
+      male: [zéro, un, deux, trois, quatre, cinq, six, sept, huit, neuf]
+      female: [zéro, une, deux, trois, quatre, cinq, six, sept, huit, neuf]
     teens: [_, onze, douze, treize, quatorze, quinze, seize, dix-sept, dix-huit, dix-neuf]
     tens: [_, dix, vingt, trente, quarante, cinquante, soixante, soixante-dix, quatre-vingt, quatre-vingt-dix]
     eighty: quatre-vingts
