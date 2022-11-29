@@ -13,8 +13,18 @@ module NumbersAndWords
             words
           end
 
+          def ones
+            super({ gender: gender })
+          end
+          
+          def tens_with_ones
+            options = { gender: gender }
+
+            super(options)
+          end
+
           def hundreds
-            super({ pluralize: simple_number_to_words.empty? })
+            super({ gender: gender, pluralize: simple_number_to_words.empty? })
           end
 
           def megs
@@ -29,6 +39,14 @@ module NumbersAndWords
 
           def thousand?
             FiguresArray::THOUSAND_CAPACITY == @current_capacity
+          end
+          
+          def gender
+            @current_capacity ||= 0
+
+            return :male if @current_capacity >= 2
+
+            @options.gender.result
           end
         end
       end
