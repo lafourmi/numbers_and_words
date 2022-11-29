@@ -14,17 +14,15 @@ module NumbersAndWords
           end
 
           def ones
-            super({ gender: gender })
+            super(internal_options)
           end
           
           def tens_with_ones
-            options = { gender: gender }
-
-            super(options)
+            super(internal_options)
           end
 
           def hundreds
-            super({ gender: gender, pluralize: simple_number_to_words.empty? })
+            super internal_options.merge(pluralize: simple_number_to_words.empty?)
           end
 
           def megs
